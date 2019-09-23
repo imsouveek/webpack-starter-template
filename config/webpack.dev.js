@@ -52,7 +52,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new htmlWebpackPlugin({
-      template: path.resolve(__dirname, "../src/client/index.html")
+      template: path.resolve(__dirname, "../src/client/index.ejs"),
+      title: "Starter"
     })
   ]
 }
