@@ -4,7 +4,8 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: [path.resolve(__dirname, "../src/client/main.js")]
+    main: [path.resolve(__dirname, "../src/client/main.js")],
+    ts: [path.resolve(__dirname, "../src/client/index.ts")]
   },
   mode: "development",
   output: {
@@ -16,6 +17,10 @@ module.exports = {
     rules: [{
       test: /\.js$/,
       use: "babel-loader",
+      exclude: /node_modules/
+    }, {
+      test: /\.ts$/,
+      use: "ts-loader",
       exclude: /node_modules/
     }, {
       test: /\.pug$/,
