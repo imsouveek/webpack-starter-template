@@ -17,7 +17,7 @@ export default class extends React.Component {
   render() {
     return (
       <h2 onClick={this.increment.bind(this)}>
-        Click to update me! {this.state.count}
+        Click me! {this.state.count}
       </h2>
     );
   }
