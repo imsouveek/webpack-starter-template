@@ -1,4 +1,4 @@
 # webpack-starter-template
 Sample templates for webpack setup
 
-Pug template
+VueJS template with pug

@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 
+import { VueLoaderPlugin } from 'vue-loader';
+
 module.exports = {
   entry: {
     main: [path.resolve(__dirname, "../src/client/main.js")]
@@ -14,12 +16,23 @@ module.exports = {
   },
   module: {
     rules: [{
+      test: /\.vue$/,
+      use: ["vue-loader"]
+    }, {
       test: /\.js$/,
       use: "babel-loader",
       exclude: /node_modules/
     }, {
       test: /\.pug$/,
-      use: ["pug-loader"]
+      oneOf: [{
+        resourceQuery: /^\?vue/,
+        use: ['pug-plain-loader']
+      },{
+        use: [
+          "raw-loader",
+          "pug-plain-loader"
+        ]
+      }]
     }, {
       test: /\.css$/,
       use: [
@@ -37,6 +50,11 @@ module.exports = {
       }]
     }]
   },
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js',
+    },
+  },
   devServer: {
     contentBase: path.resolve(__dirname, "../dist"),
     overlay: true,
@@ -49,6 +67,7 @@ module.exports = {
     new htmlWebpackPlugin({
       template: path.resolve(__dirname, "../src/client/index.pug"),
       title: "Starter"
-    })
+    }),
+    new VueLoaderPlugin()
   ]
 }

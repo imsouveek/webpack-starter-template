@@ -2,10 +2,9 @@ require('webpack-hot-middleware/client?reload=true');
 require('./main.css');
 require('./index.pug');
 
-var a = async (args) => {
-  const {a, b} = args;
-  await console.log("Arrow", a, b);
-  console.log("Awaited");
-}
+import Vue from 'vue';
+import App from "./App.vue";
 
-a({ a: 5, b: 10});
+new Vue({
+  render: h => h(App)
+}).$mount("#root");
