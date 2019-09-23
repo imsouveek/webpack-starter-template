@@ -18,12 +18,9 @@ module.exports = {
       use: "babel-loader",
       exclude: /node_modules/
     }, {
-      test: /\.html$/,
+      test: /\.ejs$/,
       use: [{
-        loader: "html-loader",
-        options: {
-          attrs: ["img:src"]
-        }
+        loader: "ejs-loader",
       }]
     }, {
       test: /\.css$/,
@@ -54,6 +51,9 @@ module.exports = {
     new htmlWebpackPlugin({
       template: path.resolve(__dirname, "../src/client/index.ejs"),
       title: "Starter"
+    }),
+    new webpack.ProvidePlugin({
+      _: "underscore"
     })
   ]
 }
