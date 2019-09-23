@@ -18,11 +18,11 @@ module.exports = {
       use: "babel-loader",
       exclude: /node_modules/
     }, {
-      test: /\.html$/,
+      test: /\.hbs$/,
       use: [{
-        loader: "html-loader",
-        options: {
-          attrs: ["img:src"]
+        loader: "handlebars-loader",
+        query: {
+          inlineRequires: "/images/"
         }
       }]
     }, {
@@ -52,7 +52,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new htmlWebpackPlugin({
-      template: path.resolve(__dirname, "../src/client/index.html")
+      template: path.resolve(__dirname, "../src/client/index.hbs"),
+      title: "Starter"
     })
   ]
 }
