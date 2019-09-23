@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: [path.resolve(__dirname, "../src/main.js")]
+    main: [path.resolve(__dirname, "../src/client/main.js")]
   },
   mode: "development",
   output: {
@@ -52,7 +52,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new htmlWebpackPlugin({
-      template: path.resolve(__dirname, "../src/index.html")
+      template: path.resolve(__dirname, "../src/client/index.html")
     })
   ]
 }
