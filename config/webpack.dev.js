@@ -18,13 +18,8 @@ module.exports = {
       use: "babel-loader",
       exclude: /node_modules/
     }, {
-      test: /\.html$/,
-      use: [{
-        loader: "html-loader",
-        options: {
-          attrs: ["img:src"]
-        }
-      }]
+      test: /\.pug$/,
+      use: ["pug-loader"]
     }, {
       test: /\.css$/,
       use: [
@@ -52,7 +47,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new htmlWebpackPlugin({
-      template: path.resolve(__dirname, "../src/client/index.html")
+      template: path.resolve(__dirname, "../src/client/index.pug"),
+      title: "Starter"
     })
   ]
 }
