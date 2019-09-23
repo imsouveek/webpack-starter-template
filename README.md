@@ -1,4 +1,4 @@
 # webpack-starter-template
-Sample templates for webpack setup
+Sample templates for webpack setup.
 
-This is the base template for haivng a CSS / JS / HTML project. Look under branches for templates of different frameworks / technologies / tools.
+This template can be used for React projects. Hotloading is enabled.
