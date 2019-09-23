@@ -1,6 +1,6 @@
 require('webpack-hot-middleware/client?reload=true');
 require('./main.css');
-require('./index.html');
+//require('./index.ejs');
 
 var a = async (args) => {
   const {a, b} = args;
