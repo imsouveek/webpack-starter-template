@@ -1,5 +1,6 @@
 body {
   background-color: #444444;
+  font-family: sans-serif;
 }
 
 .profile{
@@ -19,6 +20,15 @@ img{
 h1 {
   color: white;
   font-size: 5em;
-  font-family: sans-serif;
-  text-shadow: 0 0 20px black;
+  text-shadow: 0 0 20px blue;
+}
+
+h2 {
+  color: white;
+  font-size: 3em;
+  text-shadow: 0 0 20px green;
+}
+
+.error {
+  text-shadow: 0 0 20px red;
 }
