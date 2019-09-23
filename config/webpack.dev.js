@@ -26,10 +26,12 @@ module.exports = {
         }
       }]
     }, {
-      test: /\.css$/,
+      test: /\.scss$/,
       use: [
         "style-loader",
-        "css-loader"
+        "css-loader",
+        "postcss-loader",
+        "sass-loader"
       ]
     }, {
       test: /\.(jpg|png)$/,

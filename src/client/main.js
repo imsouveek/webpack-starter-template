@@ -1,5 +1,5 @@
 require('webpack-hot-middleware/client?reload=true');
-require('./main.css');
+require('./main.scss');
 require('./index.html');
 
 var a = async (args) => {
