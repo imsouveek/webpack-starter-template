@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "7e6d76daa4b1c18c83e2";
+/******/ 	var hotCurrentHash = "a5f9986bb04a58625bde";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -860,7 +860,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body {\\r\\n  background-color: #444444;\\r\\n}\\r\\n\\r\\n.profile{\\r\\n  display: flex;\\r\\n  height: 100vh;\\r\\n  align-items: center;\\r\\n  justify-content: center;\\r\\n  flex-flow: column;\\r\\n}\\r\\n\\r\\nimg{\\r\\n  border-radius: 100%;\\r\\n  width: 300px;\\r\\n  box-shadow: 0 0 20px black;\\r\\n}\\r\\n\\r\\nh1 {\\r\\n  color: white;\\r\\n  font-size: 5em;\\r\\n  font-family: sans-serif;\\r\\n  text-shadow: 0 0 20px blue;\\r\\n}\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/client/main.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body {\\n  background-color: #444444;\\n}\\n\\n.profile{\\n  display: flex;\\n  height: 100vh;\\n  align-items: center;\\n  justify-content: center;\\n  flex-flow: column;\\n}\\n\\nimg{\\n  border-radius: 100%;\\n  width: 300px;\\n  box-shadow: 0 0 20px black;\\n}\\n\\nh1 {\\n  color: white;\\n  font-size: 5em;\\n  font-family: sans-serif;\\n  text-shadow: 0 0 20px blue;\\n}\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/client/main.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -1042,7 +1042,7 @@ eval("module.exports = __webpack_require__.p + \"images/Souveek Bose 1514053 Cas
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = \"<!DOCTYPE html>\\r\\n\\r\\n<head>\\r\\n  <title>Document</title>\\r\\n</head>\\r\\n<body>\\r\\n    <div class=\\\"profile\\\">\\r\\n      <img src=\\\"\" + __webpack_require__(/*! ./images/Souveek Bose 1514053 Casual.jpg */ \"./src/client/images/Souveek Bose 1514053 Casual.jpg\") + \"\\\"/>\\r\\n      <h1>Hello to the World!</h1>\\r\\n  </div>\\r\\n</body>\\r\\n</html>\";\n\n//# sourceURL=webpack:///./src/client/index.html?");
+eval("module.exports = \"<!DOCTYPE html>\\n\\n<head>\\n  <title>Document</title>\\n</head>\\n<body>\\n    <div class=\\\"profile\\\">\\n      <img src=\\\"\" + __webpack_require__(/*! ./images/Souveek Bose 1514053 Casual.jpg */ \"./src/client/images/Souveek Bose 1514053 Casual.jpg\") + \"\\\"/>\\n      <h1>Hello to the World!</h1>\\n  </div>\\n</body>\\n</html>\";\n\n//# sourceURL=webpack:///./src/client/index.html?");
 
 /***/ }),
 
@@ -1076,7 +1076,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bab
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! C:\\Souveek's Stuff\\Work\\Technical Projects\\Current\\Webpack\\src\\client\\main.js */\"./src/client/main.js\");\n\n\n//# sourceURL=webpack:///multi_./src/client/main.js?");
+eval("module.exports = __webpack_require__(/*! /Users/souveek/Code/Webpack/webpack-starter-template/src/client/main.js */\"./src/client/main.js\");\n\n\n//# sourceURL=webpack:///multi_./src/client/main.js?");
 
 /***/ })
 
