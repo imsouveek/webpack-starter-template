@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const MinifyPlugin = require('uglifyjs-webpack-plugin');
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader").VueLoaderPlugin;
 
@@ -61,6 +62,9 @@ module.exports = {
     new OptimizeCssAssetsPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name]-[contenthash].css"
+    }),
+    new MinifyPlugin({
+      sourceMap: true
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     // new webpack.HotModuleReplacementPlugin(),
