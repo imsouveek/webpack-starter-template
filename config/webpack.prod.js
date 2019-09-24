@@ -63,9 +63,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name]-[contenthash].css"
     }),
-    new MinifyPlugin({
-      sourceMap: true
-    }),
+    new MinifyPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
