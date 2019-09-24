@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "a5f9986bb04a58625bde";
+/******/ 	var hotCurrentHash = "9e80cdc98448bb33d7f7";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -853,14 +853,14 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/client/main.css":
-/*!*******************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/client/main.css ***!
-  \*******************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/client/main.scss":
+/*!*********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js!./src/client/main.scss ***!
+  \*********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body {\\n  background-color: #444444;\\n}\\n\\n.profile{\\n  display: flex;\\n  height: 100vh;\\n  align-items: center;\\n  justify-content: center;\\n  flex-flow: column;\\n}\\n\\nimg{\\n  border-radius: 100%;\\n  width: 300px;\\n  box-shadow: 0 0 20px black;\\n}\\n\\nh1 {\\n  color: white;\\n  font-size: 5em;\\n  font-family: sans-serif;\\n  text-shadow: 0 0 20px blue;\\n}\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/client/main.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body {\\n  background-color: #444444; }\\n  body .profile {\\n    display: -webkit-box;\\n    display: -webkit-flex;\\n    display: -ms-flexbox;\\n    display: flex;\\n    height: 100vh;\\n    -webkit-box-align: center;\\n    -webkit-align-items: center;\\n        -ms-flex-align: center;\\n            align-items: center;\\n    -webkit-box-pack: center;\\n    -webkit-justify-content: center;\\n        -ms-flex-pack: center;\\n            justify-content: center;\\n    -webkit-box-orient: vertical;\\n    -webkit-box-direction: normal;\\n    -webkit-flex-flow: column;\\n        -ms-flex-flow: column;\\n            flex-flow: column; }\\n    body .profile img {\\n      border-radius: 100%;\\n      width: 300px;\\n      -webkit-box-shadow: 0 0 20px black;\\n              box-shadow: 0 0 20px black; }\\n    body .profile h1 {\\n      color: white;\\n      font-size: 5em;\\n      font-family: sans-serif;\\n      text-shadow: 0 0 20px blue; }\\n\\nh1 {\\n  color: white;\\n  font-size: 5em;\\n  font-family: sans-serif;\\n  text-shadow: 0 0 20px blue; }\\n\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/client/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -1042,18 +1042,7 @@ eval("module.exports = __webpack_require__.p + \"images/Souveek Bose 1514053 Cas
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = \"<!DOCTYPE html>\\n\\n<head>\\n  <title>Document</title>\\n</head>\\n<body>\\n    <div class=\\\"profile\\\">\\n      <img src=\\\"\" + __webpack_require__(/*! ./images/Souveek Bose 1514053 Casual.jpg */ \"./src/client/images/Souveek Bose 1514053 Casual.jpg\") + \"\\\"/>\\n      <h1>Hello to the World!</h1>\\n  </div>\\n</body>\\n</html>\";\n\n//# sourceURL=webpack:///./src/client/index.html?");
-
-/***/ }),
-
-/***/ "./src/client/main.css":
-/*!*****************************!*\
-  !*** ./src/client/main.css ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./main.css */ \"./node_modules/css-loader/dist/cjs.js!./src/client/main.css\");\n\nif (typeof content === 'string') {\n  content = [[module.i, content, '']];\n}\n\nvar options = {}\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\")(content, options);\n\nif (content.locals) {\n  module.exports = content.locals;\n}\n\nif (true) {\n  if (!content.locals) {\n    module.hot.accept(\n      /*! !../../node_modules/css-loader/dist/cjs.js!./main.css */ \"./node_modules/css-loader/dist/cjs.js!./src/client/main.css\",\n      function () {\n        var newContent = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./main.css */ \"./node_modules/css-loader/dist/cjs.js!./src/client/main.css\");\n\n        if (typeof newContent === 'string') {\n          newContent = [[module.i, newContent, '']];\n        }\n        \n        update(newContent);\n      }\n    )\n  }\n\n  module.hot.dispose(function() { \n    update();\n  });\n}\n\n//# sourceURL=webpack:///./src/client/main.css?");
+eval("module.exports = \"<!DOCTYPE html>\\r\\n\\r\\n<head>\\r\\n  <title>Document</title>\\r\\n</head>\\r\\n<body>\\r\\n    <div class=\\\"profile\\\">\\r\\n      <img src=\\\"\" + __webpack_require__(/*! ./images/Souveek Bose 1514053 Casual.jpg */ \"./src/client/images/Souveek Bose 1514053 Casual.jpg\") + \"\\\"/>\\r\\n      <h1>Hello to the World!</h1>\\r\\n  </div>\\r\\n</body>\\r\\n</html>\";\n\n//# sourceURL=webpack:///./src/client/index.html?");
 
 /***/ }),
 
@@ -1065,7 +1054,18 @@ eval("var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ \"./node_modules/@babel/runtime/helpers/asyncToGenerator.js\");\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n__webpack_require__(/*! webpack-hot-middleware/client?reload=true */ \"./node_modules/webpack-hot-middleware/client.js?reload=true\");\n\n__webpack_require__(/*! ./main.css */ \"./src/client/main.css\");\n\n__webpack_require__(/*! ./index.html */ \"./src/client/index.html\");\n\nvar a =\n/*#__PURE__*/\nfunction () {\n  var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(\n  /*#__PURE__*/\n  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(args) {\n    var a, b;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            a = args.a, b = args.b;\n            _context.next = 3;\n            return console.log(\"Arrow\", a, b);\n\n          case 3:\n            console.log(\"Awaited\");\n\n          case 4:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n\n  return function a(_x) {\n    return _ref.apply(this, arguments);\n  };\n}();\n\na({\n  a: 5,\n  b: 10\n});\n\n//# sourceURL=webpack:///./src/client/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ \"./node_modules/@babel/runtime/helpers/asyncToGenerator.js\");\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n__webpack_require__(/*! webpack-hot-middleware/client?reload=true */ \"./node_modules/webpack-hot-middleware/client.js?reload=true\");\n\n__webpack_require__(/*! ./main.scss */ \"./src/client/main.scss\");\n\n__webpack_require__(/*! ./index.html */ \"./src/client/index.html\");\n\nvar a =\n/*#__PURE__*/\nfunction () {\n  var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(\n  /*#__PURE__*/\n  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(args) {\n    var a, b;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            a = args.a, b = args.b;\n            _context.next = 3;\n            return console.log(\"Arrow\", a, b);\n\n          case 3:\n            console.log(\"Awaited\");\n\n          case 4:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n\n  return function a(_x) {\n    return _ref.apply(this, arguments);\n  };\n}();\n\na({\n  a: 5,\n  b: 10\n});\n\n//# sourceURL=webpack:///./src/client/main.js?");
+
+/***/ }),
+
+/***/ "./src/client/main.scss":
+/*!******************************!*\
+  !*** ./src/client/main.scss ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/postcss-loader/src!../../node_modules/sass-loader/dist/cjs.js!./main.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/client/main.scss\");\n\nif (typeof content === 'string') {\n  content = [[module.i, content, '']];\n}\n\nvar options = {}\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\")(content, options);\n\nif (content.locals) {\n  module.exports = content.locals;\n}\n\nif (true) {\n  if (!content.locals) {\n    module.hot.accept(\n      /*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/postcss-loader/src!../../node_modules/sass-loader/dist/cjs.js!./main.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/client/main.scss\",\n      function () {\n        var newContent = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/postcss-loader/src!../../node_modules/sass-loader/dist/cjs.js!./main.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/client/main.scss\");\n\n        if (typeof newContent === 'string') {\n          newContent = [[module.i, newContent, '']];\n        }\n        \n        update(newContent);\n      }\n    )\n  }\n\n  module.hot.dispose(function() { \n    update();\n  });\n}\n\n//# sourceURL=webpack:///./src/client/main.scss?");
 
 /***/ }),
 
@@ -1076,7 +1076,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bab
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! /Users/souveek/Code/Webpack/webpack-starter-template/src/client/main.js */\"./src/client/main.js\");\n\n\n//# sourceURL=webpack:///multi_./src/client/main.js?");
+eval("module.exports = __webpack_require__(/*! C:\\Souveek's Stuff\\Work\\Technical Projects\\Current\\Webpack\\src\\client\\main.js */\"./src/client/main.js\");\n\n\n//# sourceURL=webpack:///multi_./src/client/main.js?");
 
 /***/ })
 
