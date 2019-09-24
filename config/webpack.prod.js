@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader").VueLoaderPlugin;
 
@@ -35,7 +37,7 @@ module.exports = {
     }, {
       test: /\.css$/,
       use: [
-        "style-loader",
+        MiniCssExtractPlugin.loader,
         "css-loader"
       ]
     }, {
@@ -54,12 +56,11 @@ module.exports = {
       vue: 'vue/dist/vue.js',
     },
   },
-  devServer: {
-    contentBase: path.resolve(__dirname, "../dist"),
-    overlay: true,
-    hot: true
-  },
   plugins: [
+    new OptimizeCssAssetsPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name]-[contenthash].css"
+    }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
