@@ -1,8 +1,7 @@
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
-
-import { VueLoaderPlugin } from 'vue-loader';
+const VueLoaderPlugin = require("vue-loader").VueLoaderPlugin;
 
 module.exports = {
   entry: {

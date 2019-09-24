@@ -1,6 +1,6 @@
 <template lang="pug">
   h2(@click='increment')
-    | Click Me!  {{ count }}
+    | Click Me!!  {{ count }}
 </template>
 
 <script>
