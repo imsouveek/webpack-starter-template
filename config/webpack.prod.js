@@ -11,10 +11,11 @@ module.exports = {
   },
   mode: "production",
   output: {
-    filename: "[name]-bundle.js",
+    filename: process.env.NODE_ENV === 'production'? "[name]-[hash]-bundle.js" : "[name]-bundle.js",
     path: path.resolve(__dirname, "../dist"),
     publicPath: "/"
   },
+  devtool: 'source-map',
   module: {
     rules: [{
       test: /\.vue$/,
@@ -57,6 +58,11 @@ module.exports = {
     },
   },
   plugins: [
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("development")
+      }
+    }),
     new OptimizeCssAssetsPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name]-[contenthash].css"

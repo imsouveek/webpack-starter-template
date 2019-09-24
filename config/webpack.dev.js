@@ -11,10 +11,11 @@ module.exports = {
   },
   mode: "development",
   output: {
-    filename: "[name]-bundle.js",
+    filename: process.env.NODE_ENV === 'production'? "[name]-[hash]-bundle.js" : "[name]-bundle.js",
     path: path.resolve(__dirname, "../dist"),
     publicPath: "/"
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [{
       test: /\.vue$/,
@@ -62,6 +63,11 @@ module.exports = {
     hot: true
   },
   plugins: [
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("development")
+      }
+    }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
