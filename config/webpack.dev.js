@@ -5,7 +5,9 @@ const VueLoaderPlugin = require("vue-loader").VueLoaderPlugin;
 
 module.exports = {
   entry: {
-    main: [path.resolve(__dirname, "../src/client/main.js")]
+    main: [
+      "webpack-hot-middleware/client?reload=true",
+      path.resolve(__dirname, "../src/client/main.js")]
   },
   mode: "development",
   output: {
@@ -61,7 +63,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../src/client/index.pug"),
