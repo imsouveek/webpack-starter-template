@@ -1,5 +1,4 @@
-import express from 'express';
-import path from 'path';
+const express = require('express');
 
 const isProd = process.env.NODE_ENV === 'production';
 const server = express();
