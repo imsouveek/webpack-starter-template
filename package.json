@@ -9,7 +9,8 @@
     "inspect": "babel",
     "build": "rm -rf dist && webpack --config=config/webpack.prod.js",
     "build:dev": "rm -rf dist && webpack --config=config/webpack.dev.js",
-    "prod": "node src/server/express.js"
+    "prod": "node src/server/express.js",
+    "deploy": "npm run build && git push heroku vuejs:master"
   },
   "keywords": [],
   "author": "",
