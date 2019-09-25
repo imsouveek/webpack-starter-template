@@ -2,12 +2,14 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader").VueLoaderPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
     main: [
       "webpack-hot-middleware/client?reload=true",
-      path.resolve(__dirname, "../src/client/main.js")]
+      path.resolve(__dirname, "../src/client/main.js")
+    ]
   },
   mode: "development",
   output: {
@@ -60,6 +62,18 @@ module.exports = {
       vue: 'vue/dist/vue.js',
     },
   },
+  optimization: {
+    splitChunks:{
+      chunks: "all",
+      cacheGroups: {
+        vendor: {
+          name: "vendor",
+          chunks: "initial",
+          minChunks: 2
+        }
+      }
+    }
+  },
   devServer: {
     contentBase: path.resolve(__dirname, "../dist"),
     overlay: true,
@@ -73,6 +87,9 @@ module.exports = {
       template: path.resolve(__dirname, "../src/client/index.pug"),
       title: "Starter"
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new BundleAnalyzerPlugin({
+      generateStatsFile: true
+    })
   ]
 }

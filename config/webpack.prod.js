@@ -62,6 +62,18 @@ module.exports = {
       vue: 'vue/dist/vue.js',
     },
   },
+  optimization: {
+    splitChunks:{
+      chunks: "all",
+      cacheGroups: {
+        vendor: {
+          name: "vendor",
+          chunks: "initial",
+          minChunks: 2
+        }
+      }
+    }
+  },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
