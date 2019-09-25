@@ -19,9 +19,11 @@ if (!isProd) {
   const staticMw = express.static("dist");
   server.use(staticMw);
 } else {
-  
+
   const staticGzipMw = require('express-static-gzip');
-  server.use(staticGzipMw("dist"));
+  server.use(staticGzipMw("dist", {
+    enableBrotli: true
+  }));
 }
 
 const PORT = process.env.PORT || 8080;

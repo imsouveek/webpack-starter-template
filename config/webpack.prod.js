@@ -68,7 +68,12 @@ module.exports = {
       sourceMap: true
     }),
     new CompressionPlugin({
-      algorithm: "gzip"
+      algorithm: "brotliCompress",
+      filename: "[path].br[query]"
+    }),
+    new CompressionPlugin({
+      algorithm: "gzip",
+      filename: "[path].gz[query]"
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     // new webpack.HotModuleReplacementPlugin(),
