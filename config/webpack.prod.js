@@ -38,6 +38,9 @@ module.exports = {
         ]
       }]
     }, {
+      test: /\.md$/,
+      use: ["markdown-with-front-matter-loader"]
+    }, {
       test: /\.css$/,
       use: [
         MiniCssExtractPlugin.loader,
