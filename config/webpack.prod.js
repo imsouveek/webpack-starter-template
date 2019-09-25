@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MinifyPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-const BrotliCompressionPlugin = require('brotli-webpack-plugin');
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader").VueLoaderPlugin;
 
@@ -79,10 +78,9 @@ module.exports = {
       algorithm: "gzip",
       filename: "[path].gz[query]"
     }),
-    // new CompressionPlugin({
-    //   algorithm: "brotliCompress",
-    //   filename: "[path].br[query]"
-    // })
-    new BrotliCompressionPlugin()
+    new CompressionPlugin({
+      algorithm: "brotliCompress",
+      filename: "[path].br[query]"
+    })
   ]
 }

@@ -22,7 +22,8 @@ if (!isProd) {
 
   const staticGzipMw = require('express-static-gzip');
   server.use(staticGzipMw("dist", {
-    enableBrotli: true
+    enableBrotli: true,
+    orderPreference: ["br"]
   }));
 }
 
