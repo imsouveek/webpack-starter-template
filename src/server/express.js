@@ -15,9 +15,14 @@ if (!isProd) {
   const webpackHotMiddleware = require('webpack-hot-middleware')
   const webpackHotMw = webpackHotMiddleware(compiler);
   server.use(webpackHotMw);
+
+  const staticMw = express.static("dist");
+  server.use(staticMw);
+} else {
+  
+  const staticGzipMw = require('express-static-gzip');
+  server.use(staticGzipMw("dist"));
 }
-const staticMw = express.static("dist");
-server.use(staticMw);
 
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
