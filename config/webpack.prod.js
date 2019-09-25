@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MinifyPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader").VueLoaderPlugin;
 
@@ -16,6 +17,7 @@ module.exports = {
     path: path.resolve(__dirname, "../dist"),
     publicPath: "/"
   },
+  devtool: "source-map",
   module: {
     rules: [{
       test: /\.vue$/,
@@ -62,7 +64,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name]-[contenthash].css"
     }),
-    new MinifyPlugin(),
+    new MinifyPlugin({
+      sourceMap: true
+    }),
+    new CompressionPlugin({
+      algorithm: "gzip"
+    }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
