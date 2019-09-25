@@ -61,6 +61,13 @@ module.exports = {
     },
   },
   plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "../src/client/index.pug"),
+      title: "Starter"
+    }),
+    new VueLoaderPlugin(),
     new OptimizeCssAssetsPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name]-[contenthash].css"
@@ -70,15 +77,12 @@ module.exports = {
     }),
     new CompressionPlugin({
       algorithm: "gzip",
+      filename: "[path].gz[query]"
     }),
-    new BrotliCompressionPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    // new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "../src/client/index.pug"),
-      title: "Starter"
-    }),
-    new VueLoaderPlugin()
+    // new CompressionPlugin({
+    //   algorithm: "brotliCompress",
+    //   filename: "[path].br[query]"
+    // })
+    new BrotliCompressionPlugin()
   ]
 }
