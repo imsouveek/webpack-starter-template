@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "12.10.0"
+  },
   "scripts": {
     "dev": "webpack-dev-server --config=config/webpack.dev.js",
     "express-dev": "nodemon --watch config --watch src/server src/server/express.js",
