@@ -1,23 +1,25 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader").VueLoaderPlugin;
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const nodeExternals = require('webpack-node-externals');
+const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
 
 module.exports = {
+  name: "server",
   entry: {
-    main: [
-      "webpack-hot-middleware/client?reload=true",
-      path.resolve(__dirname, "../src/client/main.js")
-    ]
+    vueApp: [path.resolve(__dirname, "../src/server/entry-server.js")]
   },
   mode: "development",
+  target: "node",
   output: {
     filename: process.env.NODE_ENV === 'production'? "[name]-[hash]-bundle.js" : "[name]-bundle.js",
-    path: path.resolve(__dirname, "../dist"),
-    publicPath: "/"
+    path: path.resolve(__dirname, "../build"),
+    libraryTarget: "commonjs2"
   },
-  devtool: 'inline-source-map',
+  externals: nodeExternals({
+    whitelist: /\.css/
+  }),
+  devtool: "source-map",
   module: {
     rules: [{
       test: /\.vue$/,
@@ -43,7 +45,7 @@ module.exports = {
     }, {
       test: /\.css$/,
       use: [
-        "style-loader",
+        "vue-style-loader",
         "css-loader"
       ]
     }, {
@@ -62,34 +64,9 @@ module.exports = {
       vue: 'vue/dist/vue.js',
     },
   },
-  optimization: {
-    splitChunks:{
-      chunks: "all",
-      cacheGroups: {
-        vendor: {
-          name: "vendor",
-          chunks: "initial",
-          minChunks: 2
-        }
-      }
-    }
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, "../dist"),
-    overlay: true,
-    hot: true
-  },
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "../src/client/index.pug"),
-      title: "Starter"
-    }),
+    new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
-    new BundleAnalyzerPlugin({
-      generateStatsFile: true
-    })
+    new VueSSRServerPlugin()
   ]
 }

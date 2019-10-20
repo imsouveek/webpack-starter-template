@@ -1,15 +1,13 @@
 <template lang="pug">
   div
     h1 {{ heading }}
-    p(
-      v-html="text"
-    )
+    .card(v-html="text")
 </template>
 
 <script>
 export default {
   name: "Bio",
-  props: 
+  props:
   {
     heading: {
       type: String,
@@ -21,15 +19,15 @@ export default {
     }
   },
   methods: {
-    
+
   }
 }
 </script>
 
 <style scoped>
-  p {
+  .card {
     background: antiquewhite;
-    padding: 10px 5px; 
+    padding: 10px 5px;
     border-radius: 5px;
   }
 </style>
