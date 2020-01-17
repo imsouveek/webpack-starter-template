@@ -1,0 +1,21 @@
+.profile {
+  &__figure {
+    // width: 50rem;
+    float: left;
+    overflow: hidden;
+    clip-path: circle(50rem at 50% 50%);
+    // shape-outside: circle(50rem at 50% 50%);
+    // margin: 3rem;
+    ;
+  }
+
+  &__pic {
+    width: 50rem;
+    // border-radius: 50%;
+    // display: none;
+  }
+
+  &__text {
+    // text-align: center;
+  }
+}

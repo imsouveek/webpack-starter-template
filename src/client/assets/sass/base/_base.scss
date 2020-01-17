@@ -1,0 +1,55 @@
+/*
+  Global resets:-
+  * Set margin and padding to 0
+  * Define box sizing as inherit for all selector so that all elements
+    inherit from body
+  * Set box sizing to include content, padding and border
+  * Set global reference setting for all font sizes and spacing. This
+    is done by setting font-size in html and then defining all font
+    sizes and spacings in 'rem' unit
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/*
+  Font-size of html determines the rem size in the entire html. So, to make
+  site responsive, we basically set the font-size correctly in the html. Given
+  that we are using rems for nearly all sizes in our project, much of our
+  responsiveness is achieved by this alone
+*/
+html {
+  font-size: 62.5%; // 1rem = 10px; 10/16 = 62.5%
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px; 12/16 = 75%
+  }
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px; 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px; 8/16 = 50%
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  background-image: linear-gradient(to right bottom, $color-grey-dark, $color-grey);
+  background-attachment: fixed;
+
+  // Don't waste screen real estate when its limited
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  }
