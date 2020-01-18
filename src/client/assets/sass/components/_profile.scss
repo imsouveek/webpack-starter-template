@@ -1,21 +1,34 @@
 .profile {
+
+  background-color: $color-grey-light;
+  max-width: $grid-width;
+  margin: 0 auto;
+  padding: 5rem;
+  transform: skewX(-15deg);
+
+  @include clearfix;
+
+  & > * {
+    transform: skewX(15deg);
+  }
+
   &__figure {
-    // width: 50rem;
+    width: 20rem;
+    height: 20rem;
     float: left;
     overflow: hidden;
-    clip-path: circle(50rem at 50% 50%);
-    // shape-outside: circle(50rem at 50% 50%);
-    // margin: 3rem;
-    ;
+    margin-right: 5rem;
+    border-radius: 50%;
+
+    @supports (clip-path: circle(50% at 50% 50%)) {
+      clip-path: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      border-radius: none;
+    }
   }
 
   &__pic {
-    width: 50rem;
-    // border-radius: 50%;
-    // display: none;
+    width: 20rem;
   }
 
-  &__text {
-    // text-align: center;
-  }
 }

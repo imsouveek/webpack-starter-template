@@ -1,0 +1,27 @@
+.nav {
+  color: $color-white;
+
+  &__list {
+    @include clearfix;
+  }
+  &__item {
+    list-style-type: none;
+    float: left;
+    margin-right: 2rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+
+
+  }
+}
