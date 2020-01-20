@@ -38,14 +38,12 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss": "^7.0.23",
     "postcss-loader": "^3.0.0",
-    "pug": "^2.0.4",
-    "pug-plain-loader": "^1.0.0",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
     "terser-webpack-plugin": "^2.2.1",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-middleware": "^3.7.2",
-    "webpack-hot-middleware": "^2.25.0",
-    "webpack": "^4.41.2"
+    "webpack-hot-middleware": "^2.25.0"
   }
 }
