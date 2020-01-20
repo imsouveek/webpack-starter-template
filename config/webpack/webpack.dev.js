@@ -59,13 +59,10 @@ module.exports = {
     }, {
 
       /*
-        Pug - we are loading this using pug-plain-loader (built for VueJS)
-        followed by html-loader. Per observation, this retains hot-reload
-        functionality for pug files including inherited / included files.
-        Also note that we are using html-srcsets-loader because html-loader
+        Note that we are using html-srcsets-loader because html-loader
         does not support srcset attribute
       */
-      test: /\.pug$/,
+      test: /\.html$/,
       use: [
         {
           loader: 'html-srcsets-loader',
@@ -79,7 +76,6 @@ module.exports = {
             ]
           }
         },
-        'pug-plain-loader'
       ]
     }, {
 
@@ -160,7 +156,7 @@ module.exports = {
 
     // Provide template for index.html
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../../src/client/templates/views/index.pug'),
+      template: path.resolve(__dirname, '../../src/client/pages/index.html'),
       filename: 'index.html',
     }),
   ],

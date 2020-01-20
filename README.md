@@ -8,11 +8,10 @@ Boilerplate features:-
 * Optimized output in production mode using css and javascript compression
 * Sourcemaps are put in a separate path in production mode which can be secured
 
-## Branch sass-and-pug
+## Branch sass
 This branch contains the starter files for any project that uses sass and pug.
 
 Features of this branch:-
 * 7-1 architecture followed for Sass files
 * Pre-built mixins for clearfix, centering, media queries
 * Pre-built reset scss
-* Separate files in SCSS and Pug for layout components, e.g, header, nav, footer
