@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding: 5rem;
   transform: skewX(-15deg);
+  box-shadow: 1rem 1rem 5rem rgba($color-black, 0.3);
 
   @include clearfix;
 
