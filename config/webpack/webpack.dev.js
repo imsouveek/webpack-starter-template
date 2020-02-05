@@ -10,6 +10,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 // Have to export webpack settings object
 module.exports = {
@@ -75,7 +76,8 @@ module.exports = {
               'img:srcset',
               'link:href',
               'source:src',
-              'source:srcset'
+              'source:srcset',
+              'use:xlink:href'
             ]
           }
         },
@@ -122,7 +124,7 @@ module.exports = {
     }, {
 
       /* Load fonts */
-      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -148,6 +150,14 @@ module.exports = {
 
     // Delete output directory before each build
     new CleanWebpackPlugin(),
+
+    // Copy files for injecting svg support for IE
+    new CopyPlugin([
+      {
+        from: path.resolve(__dirname, '../../src/client/assets/js/svg4everybody.min.js'),
+        to: path.resolve(__dirname, '../../dist')
+      }
+    ]),
 
     // Enable source maps
     new webpack.SourceMapDevToolPlugin({}),

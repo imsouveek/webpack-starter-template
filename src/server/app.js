@@ -1,8 +1,5 @@
 import { resolve } from 'path';
 import express from 'express';
-import configDevClient, { devServer } from '../../config/webpack/webpack.dev';
-import configProdClient from '../../config/webpack/webpack.prod';
-import webpack from 'webpack';
 
 // Create the express server-side app
 const app = express();
@@ -19,13 +16,15 @@ app.use('/sourcemaps/*', (req, res, next) => {
 if (!isProd) {
 
   // Development server
+  const webpack = require('webpack');
+  const configDevClient = require('../../config/webpack/webpack.dev');
 
   // Compile development webpack config
   const compiler = webpack([configDevClient]).compilers[0];
 
   // Enable webpack dev middleware
   const WebpackDevMiddleware = require('webpack-dev-middleware');
-  const webpackDevMw = WebpackDevMiddleware(compiler, devServer);
+  const webpackDevMw = WebpackDevMiddleware(compiler, configDevClient.devServer);
   app.use(webpackDevMw);
 
   // Enable webpack hot middleware
@@ -47,7 +46,7 @@ if (!isProd) {
     enableBrotli: true,
     orderPreference: ['br']
   }));
-  
+
 }
 
 // Export the app
